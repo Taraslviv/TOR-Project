@@ -12,29 +12,39 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 
 @Entity
+@NamedQueries({
+	@NamedQuery(name = User.FIND_BY_NAME, query = "select u from User u where u.lName = :lastName"),
+	@NamedQuery(name = User.FINND_BY_EMAIL, query = "select u from User u where u.eMail = :mail")
+	})
 public class User {
 
+	public static final String FIND_BY_NAME = "User.findByName";
+	public static final String FINND_BY_EMAIL = "User.findByEmail";
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	
-	@Column(length = 50)
+	@Column(length = 50, nullable = false)
 	private String fName;
 	
-	@Column(length = 50)
+	@Column(length = 50, nullable = false)
 	private String lName;
 	
-	@Column(length = 50)
+	@Column(length = 50, nullable = false)
 	private String mName;
 	
-	@Column(length = 70)
+	@Column(length = 70, nullable = false)
 	private String password;
 	
+	@Column(nullable = false)
 	private Integer age;
 	
-	@Column(length = 70)
+	@Column(length = 70, nullable = false, unique = true)
 	private String eMail;
 	
 	@ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.REFRESH)

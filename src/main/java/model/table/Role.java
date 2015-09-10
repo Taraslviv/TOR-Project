@@ -20,9 +20,10 @@ public class Role {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	
-	@Column(length = 30)
+	@Column(length = 50, unique = true, nullable = false)
 	private String roleName;
 	
+	@Column(nullable = false)
 	private Double roleRate;
 	
 	@ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.REFRESH)
@@ -67,3 +68,4 @@ public class Role {
 	
 	
 }
+

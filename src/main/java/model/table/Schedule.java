@@ -1,5 +1,5 @@
 package model.table;
-
+/*
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -57,3 +57,4 @@ public class Schedule {
 	
 
 }
+*/
