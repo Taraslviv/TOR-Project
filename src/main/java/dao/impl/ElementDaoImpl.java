@@ -41,7 +41,7 @@ public class ElementDaoImpl<E> implements ElementDao<E> {
 		
 		try{
 		return (E) entityManaget
-				.createQuery("select e from"+ elementClass.getSimpleName() +"e where e.id = :id")
+				.createQuery("select e from "+ elementClass.getSimpleName() +" e where e.id = :id")
 				.setParameter("id", elementId).getSingleResult();
 		} catch(NoResultException e) {
 			e.printStackTrace();
@@ -52,7 +52,7 @@ public class ElementDaoImpl<E> implements ElementDao<E> {
 	@SuppressWarnings("unchecked")
 	@Transactional
 	public List<E> getAllElements() {
-		return entityManaget.createQuery("select from"+elementClass.getSimpleName()).getResultList();
+		return entityManaget.createQuery("from "+elementClass.getSimpleName()).getResultList();
 	}
 
 	@Transactional

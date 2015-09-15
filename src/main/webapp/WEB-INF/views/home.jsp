@@ -8,8 +8,8 @@
 </head>
 <body>
 <h3> Welcome to Office </h3> 
-
-<a href="addTestUser">Add new user</a><br />
-<h3> ${addUser} </h3> 
+<p>Users:</p>
+<p>${allUsersList}</p>
+<a href="toAddUser">Add new user</a><br /> 
 </body>
 </html>
