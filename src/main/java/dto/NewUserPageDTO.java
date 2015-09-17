@@ -5,7 +5,7 @@ public class NewUserPageDTO {
 	private String firstName;
 	private String lastName;
 	private String middleName;
-	//private int age;
+	private int age;
 	private String eMail; 
 	private String userPassword;
 	private String userRole;
@@ -37,7 +37,7 @@ public class NewUserPageDTO {
 	public void setMiddleName(String middleName) {
 		this.middleName = middleName;
 	}
-/*
+
 	public int getAge() {
 		return age;
 	}
@@ -45,7 +45,7 @@ public class NewUserPageDTO {
 	public void setAge(int age) {
 		this.age = age;
 	}
-*/
+
 	public String geteMail() {
 		return eMail;
 	}

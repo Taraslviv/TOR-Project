@@ -1,5 +1,6 @@
 package controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -23,15 +24,14 @@ public class HomeController {
 	public String hello(Model model) {
 		model.addAttribute("hello", "Hello!");
 
-		Object obj;
 		List<User> users = userService.getAllUsers();
-		if(!users.isEmpty()) {
-			obj = users.get(0).getfName();
+
+		if (!users.isEmpty()) {
+			model.addAttribute("allUsersList", users);
 		} else {
-			obj = "No users";
+			model.addAttribute("allUsersList", "No users");
 		}
-		
-		model.addAttribute("allUsersList", obj);
+
 		return "home";
 	}
 
