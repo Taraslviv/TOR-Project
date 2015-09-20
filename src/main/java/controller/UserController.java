@@ -86,7 +86,7 @@ public class UserController {
 		return "editUser";
 	}
 	
-	@RequestMapping(value = "/editUserInfo", method = RequestMethod.POST)
+	@RequestMapping(value = "/editUserInfo", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
 	public String userEditor(HttpServletRequest request, @RequestBody NewUserPageDTO userDTO) {
 		Long userId = Long.parseLong(request.getParameter("userId"));
 		
@@ -101,6 +101,6 @@ public class UserController {
 		
 		userService.addUser(user);
 		
-		return "editUser";
+		return "redirect:/home";
 	}
 }

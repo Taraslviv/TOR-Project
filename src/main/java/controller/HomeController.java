@@ -26,11 +26,7 @@ public class HomeController {
 
 		List<User> users = userService.getAllUsers();
 
-		if (!users.isEmpty()) {
-			model.addAttribute("allUsersList", users);
-		} else {
-			model.addAttribute("allUsersList", "No users");
-		}
+		model.addAttribute("allUsersList", users);
 
 		return "home";
 	}
