@@ -86,7 +86,11 @@ public class UserController {
 		return "editUser";
 	}
 	
-	@RequestMapping(value = "/editUserInfo", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
+	@RequestMapping(value = "/editUserInfo", method = RequestMethod.POST,
+			consumes = MediaType.APPLICATION_JSON_VALUE)
+			//headers={"Accept=application/json"})
+			//consumes = "application/json")
+			
 	public String userEditor(HttpServletRequest request, @RequestBody NewUserPageDTO userDTO) {
 		Long userId = Long.parseLong(request.getParameter("userId"));
 		
@@ -101,6 +105,7 @@ public class UserController {
 		
 		userService.addUser(user);
 		
+		System.out.println(userDTO.getLastName());
 		return "redirect:/home";
 	}
 }
