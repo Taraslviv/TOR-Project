@@ -38,8 +38,21 @@ public class UserServiceImpl implements UserService{
 	}
 
 	@Transactional
-	public User findByEmail(String email) {
+	public User getInfoByEmail(String email) {
+		
 		return userDou.findByEmail(email);
+	}
+
+	@Transactional
+	public boolean addNewUserRole(User user, String newUserRoleName) {
+		
+		return userDou.addUserRole(user, newUserRoleName);
+	}
+
+	@Override
+	public void updateUserInfo(User user) {
+		userDou.updateElement(user);
+		
 	}
 	
 }

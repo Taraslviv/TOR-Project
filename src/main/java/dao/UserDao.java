@@ -8,4 +8,5 @@ public interface UserDao extends ElementDao<User> {
 
 	public List<User> findByLastName(String lastName);
 	public User findByEmail(String email);
+	public boolean addUserRole(User user, String role);
 }

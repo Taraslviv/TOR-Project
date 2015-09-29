@@ -26,6 +26,10 @@
 	<!--<form action="take-user-info" method="POST" cssClass="form-horizontal"> -->
 <div id="create_user">
 	<div>
+		<label for="id">Id</label> <input id="id" type="text" name="id"
+			class="form-control" value="${userId}">
+	</div>
+	<div>
 		<label for="firstName">First Name</label> <input id="firstName" name="firstName" 
 		type="text" class="form-control" value="${firstUserName}">
 	</div>
@@ -45,12 +49,10 @@
 		<label for="email">Email</label> <input id="eMail" type="text" name="eMail"
 			class="form-control" value="${userEmail}">
 	</div>
-	<div>
-		<label for="role">Role</label> <input id="userRole" type="text" name="userRole"
-			class="form-control" value="some role">
-	</div>
 	
 	<button id="take-user-info" class="btn btn-sample">Save</button>
+	
+	<a href="home"><button>turn back</button></a>
 	
 </div>
 	<!--</form>-->

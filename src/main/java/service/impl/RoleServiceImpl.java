@@ -36,4 +36,9 @@ public class RoleServiceImpl implements RoleService{
 		roleDao.addElement(role);
 	}
 
+	@Transactional
+	public Role getRoleByName(String roleName) {
+		return roleDao.findByRoleName(roleName);
+	}
+
 }

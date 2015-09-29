@@ -12,5 +12,7 @@ public interface RoleService {
 	public void deleteRole(Role role);
 	
 	public void addRole(String roleName, Double rate);
+	
+	public Role getRoleByName(String roleName);
 }
 

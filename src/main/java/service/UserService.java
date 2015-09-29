@@ -10,10 +10,14 @@ public interface UserService {
 	
 	public User getUserInfo(Long userId);
 	
-	public User findByEmail(String email);
+	public User getInfoByEmail(String email);
 	
 	public void deleteUser(User user);
 	
 	public void addUser(User user);
+	
+	public boolean addNewUserRole(User user, String newUserRoleName);
+	
+	public void updateUserInfo(User user);
 }
 

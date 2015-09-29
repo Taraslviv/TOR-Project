@@ -12,10 +12,15 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 
 @Entity
+@NamedQueries(@NamedQuery(name = Role.FIND_BY_ROLE_NAME, query="select u from Role u where u.roleName = :roleName")) 
 public class Role {
 
+	public static final String FIND_BY_ROLE_NAME = "Role.findByName";
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;

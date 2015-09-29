@@ -17,8 +17,10 @@ import javax.persistence.NamedQuery;
 
 @Entity
 @NamedQueries({
-	@NamedQuery(name = User.FIND_BY_NAME, query = "select u from User u where u.lName = :lastName"),
-	@NamedQuery(name = User.FINND_BY_EMAIL, query = "select u from User u where u.eMail = :mail")
+	@NamedQuery(name = User.FIND_BY_NAME, 
+			query = "select u from User u where u.lName = :lastName"),
+	@NamedQuery(name = User.FINND_BY_EMAIL, 
+			query = "select u from User u where u.eMail = :mail")
 	})
 public class User {
 

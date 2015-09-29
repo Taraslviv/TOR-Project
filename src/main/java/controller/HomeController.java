@@ -27,8 +27,9 @@ public class HomeController {
 		List<User> users = userService.getAllUsers();
 
 		model.addAttribute("allUsersList", users);
-
+		
 		return "home";
+		
 	}
 
 }

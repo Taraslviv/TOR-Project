@@ -3,6 +3,11 @@
  */
 $('#take-user-info').click(function(){
 	
+	var r = confirm("Do you want save changes?");
+	if (r == true) {
+		//window.location = 'home';
+		
+		//prompt("Change has been saved")
 
 	var json = {
 			'firstName' : $('#firstName').val(),
@@ -10,32 +15,32 @@ $('#take-user-info').click(function(){
 			'middleName' : $('#middleName').val(),
 			'age' : $('#age').val(),
 			'eMail' : $('#eMail').val(),
-			'userPassword' : $('#userPassword').val(),
-			'userRole' : $('#userRole').val(),
+			'id' : $('#id').val()
+			//'userPassword' : $('#userPassword').val(),
+			//'userRole' : $('#userRole').val()
 	}
 	
 	$.ajax({
 		
-//	    headers: { 
-//	        'Accept': "application/json",
-//	        'Content-Type': "application/json" 
-//	    },
-//	     beforeSend : function(xhr) {
-//	         xhr.setRequestHeader("Accept", "application/json");
-//	         xhr.setRequestHeader("Content-Type", "application/json");
-//	      },
-		
 		url : "editUserInfo",
 		type : "POST",
 		data : JSON.stringify(json),
-		contextType : "application/json",
+		contentType : "application/json",
+		//dataType : "json",
 		success : function() {
 			console.log("OK");
+			//window.location = 'home';
+			//window.location.href = "home";
+			alert("Change has been saved");
 		},
-		error: function() {
-			console.log("Not OK");
+		//error(jqXHR, textStatus, errorThrown):function,array
+		error:function(XMLHttpRequest, textStatus, errorThrown) {
+			console.log("We have next errors:"+XMLHttpRequest, textStatus, errorThrown);
+			alert("Change hasn't been saved");
 		}
+
 	});
-	
-	console.log("OK script");
+	} else {
+	    
+	}
 });

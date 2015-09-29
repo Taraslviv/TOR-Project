@@ -54,18 +54,25 @@
 			<form:input path="eMail" cssClass="form-control" placeholder="exapmle@mail.com"/>
 		</div>
 	</div>	
-	<div class="form-group">
+<%--	<div class="form-group">
 		<label for="userRole" class="col-sm-2 control-label">Role:</label>
 		<div class="col-sm-10">
 			<form:input path="userRole" cssClass="form-control" placeholder="employee"/>
 		</div>
 	</div>	
+--%>
 	<div class="form-group">
 		<label for="userPassword" class="col-sm-2 control-label">Password:</label>
 		<div class="col-sm-10">
 			<form:password path="userPassword" cssClass="form-control" placeholder="password"/>
 		</div>
 	</div>	
+	<div class="form-group">
+		<div class="col-sm-10">
+			<form:checkboxes path="userRoles" items="${allExistRoles}" itemValue="id"
+			itemLabel="roleName"/>
+		</div>
+	</div>
 	<div class="form-group">
 		<div class="col-sm-2">
 			<input type="submit" value="Save" 
